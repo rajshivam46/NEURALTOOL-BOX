@@ -1,0 +1,268 @@
+.ds-wrapper {
+  padding: 1rem 0;
+  color: #ffffff;
+}
+
+.ds-header {
+  margin-bottom: 2rem;
+}
+
+.ds-main-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #e5e7eb;
+}
+
+.ds-main-subtitle {
+  font-size: 0.85rem;
+  color: #8b92b2;
+}
+
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ds-grid-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.ds-card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gradients matching image */
+.ds-grad-cyan { background: linear-gradient(135deg, #38c8be 0%, #206277 100%); }
+.ds-grad-pink { background: linear-gradient(135deg, #f0897b 0%, #683c50 100%); }
+.ds-grad-orange { background: linear-gradient(135deg, #fcad00 0%, #764b38 100%); }
+.ds-grad-purple { background: linear-gradient(135deg, #816df9 0%, #3e2863 100%); }
+
+.ds-gradient-card {
+  color: white;
+  min-height: 140px;
+}
+
+.ds-status-card {
+  background: #272b3b;
+  min-height: 140px;
+}
+
+.ds-card-bg-icon {
+  position: absolute;
+  right: -10px;
+  top: 10px;
+  opacity: 0.15;
+  color: white;
+  pointer-events: none;
+}
+
+.ds-card-content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.ds-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.25rem;
+}
+
+.ds-card-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.ds-card-title {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.ds-title-muted { color: #8b92b2; }
+
+.ds-card-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ds-card-subtitle {
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+
+.ds-subtitle-muted { color: #6b7294; }
+
+.ds-sparkline-container {
+  width: 100%;
+}
+
+.ds-spark-progress {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  border-radius: 2px;
+  position: relative;
+  margin-top: 4px;
+}
+
+.ds-spark-fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.ds-spark-thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+.ds-status-card .ds-spark-progress {
+  background: #2e334a;
+}
+.ds-status-card .ds-spark-fill {
+  background: #4c5680 !important;
+}
+
+.ds-icon-right { opacity: 0.9; }
+.ds-icon-muted { color: #6b7294; }
+
+.ds-status-value-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ds-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.ds-up { background: #ff5252; color: white; } /* Arrow usually down rotated 180 means up, but wait image uses red for down, green for up */
+/* Fixing the arrow colors according to image (red down, green up) */
+.ds-up { background: #2bd4a9; color: white; }
+.ds-down { background: #ff5252; color: white; }
+
+.ds-panel {
+  background: #272b3b;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.ds-panel-header {
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2e334a;
+}
+
+.ds-panel-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.ds-panel-date {
+  font-size: 0.75rem;
+  color: #6b7294;
+  margin-left: 0.5rem;
+  font-weight: 400;
+}
+
+.ds-panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ds-btn {
+  background: transparent;
+  border: 1px solid #455486;
+  color: #a1a3b1;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ds-btn:hover { background: #2e334a; color: white; }
+
+.ds-btn-green {
+  border-color: #0dc9a7;
+  color: #0dc9a7;
+}
+.ds-btn-green:hover { background: rgba(13, 201, 167, 0.1); }
+
+.ds-icon-btn {
+  color: #455486;
+  cursor: pointer;
+}
+.ds-icon-btn:hover { color: #a1a3b1; }
+
+.ds-panel-body {
+  padding: 1rem;
+}
+
+.ds-map-controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #1b1e2b;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.ds-map-zoom {
+  background: transparent;
+  border: none;
+  color: #a1a3b1;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.ds-map-zoom:hover { background: #2e334a; color: white; }
+
+/* Recharts Overrides for specific dark theme */
+.recharts-cartesian-grid-horizontal line {
+  stroke: #2e334a;
+}
+.recharts-cartesian-grid-vertical line {
+  stroke: transparent;
+}

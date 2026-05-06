@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* UI/UX Monochromatic Green Spec */
+  --bg-primary: #1b1e2b;
+  --bg-card: #272b3b;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a3b1;
+  --accent-green: #48cfad;
+  --accent-light: rgba(72, 207, 173, 0.2);
+  --border-color: rgba(255, 255, 255, 0.05);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  --shadow-bento: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0px 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Framework */
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4 { color: var(--text-primary); font-weight: 700; letter-spacing: -0.02em; }
+p { color: var(--text-secondary); font-weight: 400; }
+
+.page-header { margin-bottom: 2rem; }
+.page-title { font-size: 2rem; margin-bottom: 0.25rem; }
+.page-subtitle { font-size: 1rem; color: var(--text-secondary); }
+
+/* Bento Cards */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-bento);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Responsive Grid Systems for Bento Layouts */
+.grid { display: grid; gap: 1.5rem; }
+.bento-2 { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+.bento-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.bento-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+/* Interactive Form Elements */
+.form-group { margin-bottom: 1.25rem; }
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 3px rgba(27, 94, 56, 0.1);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+.btn:hover { background: var(--bg-primary); }
+
+.btn-primary {
+  background: var(--accent-green);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(27, 94, 56, 0.2);
+}
+.btn-primary:hover {
+  background: #144929;
+  transform: translateY(-1px);
+}
+
+.btn-success { background: var(--accent-green); color: #fff; border: none; }
+.btn-success:hover { background: #144929; }
+
+/* Dashboard Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.badge-success { background: var(--accent-light); color: var(--accent-green); }
+.badge-warning { background: #FFF3CD; color: #856404; }
+.badge-info { background: #E2E3E5; color: var(--text-secondary); }
+
+/* Custom Checkboxes */
+.checkbox-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.checkbox-label {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.75rem; border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  cursor: pointer; transition: background 0.2s;
+  background: var(--bg-primary);
+}
+.checkbox-label:hover { background: var(--accent-light); border-color: var(--accent-green); }
+.checkbox-input { 
+  accent-color: var(--accent-green); 
+  width: 1.25rem; height: 1.25rem; 
+}
+
+/* UI Alerts */
+.alert {
+  padding: 1rem 1.25rem; border-radius: var(--radius-md);
+  margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+  font-weight: 500; font-size: 0.95rem; box-shadow: var(--shadow-bento);
+}
+.alert-error { background: #F8D7DA; color: #721C24; border-left: 4px solid #DF4759; }
+.alert-success { background: var(--accent-light); color: var(--accent-green); border-left: 4px solid var(--accent-green); }
+
+/* Specialized Drop/Drag file areas */
+.upload-zone {
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+  padding: 3rem 2rem; border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg); background: var(--bg-primary);
+  cursor: pointer; transition: all 0.2s ease;
+}
+.upload-zone:hover {
+  border-color: var(--accent-green); background: #F0F5F2;
+}
+.upload-icon { color: var(--accent-green); margin-bottom: 0.5rem; }
+
+/* Loaders */
+.spinner {
+  width: 20px; height: 20px;
+  border: 3px solid rgba(27, 94, 56, 0.2); border-top-color: var(--accent-green);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Micro-animations */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards; opacity: 0;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }

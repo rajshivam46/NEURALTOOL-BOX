@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24cdd5" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#718cff" stop-opacity="0.8" />
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+    </filter>
+  </defs>
+
+  <!-- Network Edges -->
+  <path d="M 100 200 L 250 80 L 400 150 L 600 90 L 700 250 L 500 350 L 300 280 Z" stroke="url(#glow)" stroke-width="2" fill="none" opacity="0.3" />
+  <path d="M 100 200 L 300 280 L 400 150 L 500 350 L 700 250" stroke="url(#glow)" stroke-width="2" fill="none" opacity="0.3" />
+  <path d="M 250 80 L 300 280 M 400 150 L 600 220 L 700 250 M 600 90 L 600 220 L 500 350" stroke="url(#glow)" stroke-width="1.5" fill="none" opacity="0.2" />
+
+  <!-- Glowing Nodes -->
+  <g fill="url(#glow)">
+    <circle cx="100" cy="200" r="8" filter="url(#blur)" />
+    <circle cx="100" cy="200" r="4" fill="#fff" />
+    
+    <circle cx="250" cy="80" r="10" filter="url(#blur)" />
+    <circle cx="250" cy="80" r="5" fill="#fff" />
+    
+    <circle cx="400" cy="150" r="12" filter="url(#blur)" />
+    <circle cx="400" cy="150" r="6" fill="#fff" />
+    
+    <circle cx="600" cy="90" r="8" filter="url(#blur)" />
+    <circle cx="600" cy="90" r="4" fill="#fff" />
+    
+    <circle cx="700" cy="250" r="9" filter="url(#blur)" />
+    <circle cx="700" cy="250" r="4.5" fill="#fff" />
+    
+    <circle cx="500" cy="350" r="11" filter="url(#blur)" />
+    <circle cx="500" cy="350" r="5.5" fill="#fff" />
+    
+    <circle cx="300" cy="280" r="10" filter="url(#blur)" />
+    <circle cx="300" cy="280" r="5" fill="#fff" />
+    
+    <circle cx="600" cy="220" r="7" filter="url(#blur)" />
+    <circle cx="600" cy="220" r="3.5" fill="#fff" />
+  </g>
+
+  <!-- Animated Data Packets (conceptual using SVG offset) -->
+  <circle cx="0" cy="0" r="3" fill="#fff">
+    <animateMotion dur="4s" repeatCount="indefinite" path="M 100 200 L 250 80" />
+  </circle>
+  <circle cx="0" cy="0" r="3" fill="#fff">
+    <animateMotion dur="5s" repeatCount="indefinite" path="M 400 150 L 600 90" />
+  </circle>
+  <circle cx="0" cy="0" r="3" fill="#fff">
+    <animateMotion dur="3.5s" repeatCount="indefinite" path="M 300 280 L 500 350" />
+  </circle>
+  <circle cx="0" cy="0" r="3" fill="#fff">
+    <animateMotion dur="4.2s" repeatCount="indefinite" path="M 700 250 L 600 220" />
+  </circle>
+</svg>

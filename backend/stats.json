@@ -1,0 +1,80 @@
+{
+    "total_datasets": 11,
+    "models_trained": 12,
+    "total_epochs": 3905,
+    "sum_accuracy": 5.452,
+    "performance_history": [
+        {
+            "name": "Perceptron",
+            "val1": 100,
+            "val2": 0,
+            "area": 0
+        },
+        {
+            "name": "Backprop MLP",
+            "val1": 52,
+            "val2": 12,
+            "area": -24
+        },
+        {
+            "name": "RNN",
+            "val1": 0,
+            "val2": 1,
+            "area": -3
+        },
+        {
+            "name": "Perceptron",
+            "val1": 100,
+            "val2": 0,
+            "area": 0
+        },
+        {
+            "name": "RNN",
+            "val1": 0,
+            "val2": 1,
+            "area": -3
+        },
+        {
+            "name": "Perceptron",
+            "val1": 100,
+            "val2": 0,
+            "area": 0
+        },
+        {
+            "name": "Backprop MLP",
+            "val1": 43,
+            "val2": 11,
+            "area": -23
+        },
+        {
+            "name": "RNN",
+            "val1": 0,
+            "val2": 1,
+            "area": -3
+        },
+        {
+            "name": "RNN",
+            "val1": 0,
+            "val2": 2,
+            "area": -4
+        },
+        {
+            "name": "Perceptron",
+            "val1": 100,
+            "val2": 0,
+            "area": 0
+        },
+        {
+            "name": "Backprop MLP",
+            "val1": 49,
+            "val2": 12,
+            "area": -24
+        },
+        {
+            "name": "RNN",
+            "val1": 0,
+            "val2": 2,
+            "area": -5
+        }
+    ]
+}
