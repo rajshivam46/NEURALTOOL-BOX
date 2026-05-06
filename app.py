@@ -218,3 +218,10 @@ elif page == "CNN (Face Recognition)":
         # Note: In a real implementation, you would convert the image to base64
         # and pass it to backend.models.cnn.face_recognizer functions.
         st.info("CNN backend integration would process this image.")
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"message": "Hello World"}
