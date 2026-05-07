@@ -22,18 +22,19 @@ app.include_router(predict_routes.router, prefix="/api/predict", tags=["Predict"
 app.include_router(cnn_routes.router, prefix="/api/cnn", tags=["Computer Vision"])
 
 # Ensure frontend directory exists
-FRONTEND_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
+FRONTEND_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend", "dist")
 os.makedirs(FRONTEND_DIR, exist_ok=True)
 
-# Mount it
-app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
+# Mount the static files (js, css, assets)
+app.mount("/assets", StaticFiles(directory=os.path.join(FRONTEND_DIR, "assets")), name="assets")
 
-@app.get("/")
-def read_root():
+# Catch-all route to serve the React app
+@app.api_route("/{full_path:path}")
+def catch_all(full_path: str):
     index_path = os.path.join(FRONTEND_DIR, "index.html")
     if os.path.exists(index_path):
         return FileResponse(index_path)
-    return {"message": "Welcome to the Neural Network Toolbox API - Frontend not found."}
+    return {"message": "Welcome to the Neural Network Toolbox API - Frontend build not found. Please run npm run build in the frontend directory."}
 
 if __name__ == "__main__":
     import uvicorn
